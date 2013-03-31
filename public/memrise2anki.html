@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Memrise to Anki conversion
+		</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			function bigloada()
+			{
+				url = $("#baseurl").val();
+				$.get("/bonjour/" + encodeURIComponent(url), function(data) {
+					$("#results > textarea").val(data);
+				});
+
+				$("#results > textarea").val("Hold tight, fetching word lists from Memrise...");
+			}
+
+			$(document).ready(function() {
+				$("#convert").click(bigloada);
+			});
+		</script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-39737547-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	</head>
+	<body style="margin-top: 1em;">
+		<div class="container">
+		<div class="row">
+			<div class="span8">
+				<h4>Enter the home URL of the course you'd like to convert:</h3>
+				<input class="input-xxlarge" type="text" id="baseurl" placeholder="http://www.memrise.com/course/749/the-guardian-chinese-challenge/"/><br/>
+				<button class="btn btn-primary" id="convert">Convert to Anki-compatible format</button>
+
+			<h4 style="margin-top: 3em;">How to use it:</h3>
+				<ol>
+					<li>Copy and paste your results into Notepad (or your favorite text editor).</li>
+					<li>Save the file. In the save dialog, make sure to select an Encoding of "UTF-8".</li>
+					<li>Open Anki, go to File -> Import, and select the file you just saved.</li>
+					<li>Voilà!</li>
+				</ol>
+		</div>
+		<div class="span4" id="results">
+			<h4>Result</h4>
+			<textarea cols="40" rows="20"></textarea>
+		</div>
+		</div>
+		</div>
+	</body>
+</html>
