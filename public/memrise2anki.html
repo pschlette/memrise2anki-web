@@ -36,25 +36,36 @@
 	</head>
 	<body style="margin-top: 1em;">
 		<div class="container">
-		<div class="row">
-			<div class="span8">
-				<h4>Enter the home URL of the course you'd like to convert:</h3>
-				<input class="input-xxlarge" type="text" id="baseurl" placeholder="http://www.memrise.com/course/749/the-guardian-chinese-challenge/"/><br/>
-				<button class="btn btn-primary" id="convert">Convert to Anki-compatible format</button>
+			<div class="row">
+				<div class="span8">
+					<div class="alert alert-info alert-block">
+						Did you know there's a Memrise2Anki extension
+							for Anki now? Not only is it easier to use, it also downloads
+						images and audio from a Memrise course! <a style="color: #31238C"
+							href="https://ankiweb.net/shared/info/1959202519">Click here</a> to
+						check it out.
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span8">
+					<h4>Enter the home URL of the course you'd like to convert:</h3>
+					<input class="input-xxlarge" type="text" id="baseurl" placeholder="http://www.memrise.com/course/749/the-guardian-chinese-challenge/"/><br/>
+					<button class="btn btn-primary" id="convert">Convert to Anki-compatible format</button>
 
-			<h4 style="margin-top: 3em;">How to use it:</h3>
-				<ol>
-					<li>Copy and paste your results into Notepad (or your favorite text editor).</li>
-					<li>Save the file. In the save dialog, make sure to select an Encoding of "UTF-8".</li>
-					<li>Open Anki, go to File -> Import, and select the file you just saved.</li>
-					<li>Voilà!</li>
-				</ol>
-		</div>
-		<div class="span4" id="results">
-			<h4>Result</h4>
-			<textarea cols="40" rows="20"></textarea>
-		</div>
-		</div>
+				<h4 style="margin-top: 3em;">How to use it:</h3>
+					<ol>
+						<li>Copy and paste your results into Notepad (or your favorite text editor).</li>
+						<li>Save the file. In the save dialog, make sure to select an Encoding of "UTF-8".</li>
+						<li>Open Anki, go to File -> Import, and select the file you just saved.</li>
+						<li>Voilà!</li>
+					</ol>
+				</div>
+				<div class="span4" id="results">
+					<h4>Result</h4>
+					<textarea cols="40" rows="20"></textarea>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
